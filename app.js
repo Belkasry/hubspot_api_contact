@@ -31,26 +31,6 @@ app.post('/contacts', async (req, res) => {
     }
 });
 
-// app.get('/contacts', (req, res) => {
-//     try {
-//         console.log('Getting contact details...');
-//         const response = axios.get(`https://api.hubapi.com/crm/v3/objects/contacts`, {
-//             headers: {
-//                 Authorization: `Bearer pat-eu1-8f65c118-1e0e-4abb-9f86-f43bf3d05e2c`,
-//                 'Content-Type': 'application/json'
-//             },
-//             params: {
-//                 properties: ['firstname', 'lastname', 'email'] // Specify the properties you want to retrieve
-//             }
-//         });
-//
-//         console.log('Contact details:', response.data);
-//         return response.data;
-//     } catch (error) {
-//         console.error('Error getting contact:', error.response ? error.response.data : error.message);
-//     }
-// });
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
