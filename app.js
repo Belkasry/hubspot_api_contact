@@ -7,6 +7,10 @@ require('dotenv').config()
 const hubspot = require('@hubspot/api-client')
 const hubspotClient = new hubspot.Client({accessToken: process.env.HUBSPOT_API_KEY});
 const router = express.Router();
+
+app.get('/', async (req, res) => {
+    res.send('Hello World!');
+});
 app.post('/contacts', async (req, res) => {
     try {
         console.log('Creating contact...');
