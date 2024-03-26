@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios');
+var cors = require('cors')
 const app = express();
 app.use(express.json());
+app.use(cors())
 require('dotenv').config()
-
+app.options('*', cors())
 const hubspot = require('@hubspot/api-client')
 const hubspotClient = new hubspot.Client({accessToken: process.env.HUBSPOT_API_KEY});
 const router = express.Router();
